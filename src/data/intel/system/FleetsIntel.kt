@@ -11,7 +11,6 @@ import com.fs.starfarer.api.ui.IntelUIAPI
 import com.fs.starfarer.api.ui.SectorMapAPI
 import com.fs.starfarer.api.ui.TooltipMakerAPI
 import com.fs.starfarer.api.util.Misc
-import data.PrintData
 import java.awt.Color
 import java.lang.invoke.MethodHandles
 import java.lang.invoke.MethodType
