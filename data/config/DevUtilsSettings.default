@@ -1,0 +1,10 @@
+{
+    "DevmodeKeybind":37,
+    "DevmodeMouseButton": 4,
+	"devModeOnlyIntel": true,
+	"maxEntries": 50,
+	"overlayPosX": 0.7,
+	"overlayPosY": 0.9,
+	"overlayZoom": 0.5,
+	"overlayColor": 0
+}

@@ -1,0 +1,22 @@
+{
+    "id": "devutils",
+    "name": "DevUtils",
+    "author": "Lukas04",
+    "utility": "true",
+    "version": "1.5",
+    "description": "Small Quality of Life mod for mod devs",
+    "gameVersion": "0.95.1a-RC6",
+	"jars":["jars/DevUtils.jar"],
+	"modPlugin":"DevUtilsPlugin",
+	"dependencies": [
+		{
+			"id": "lw_lazylib",
+			"name": "LazyLib",
+		},
+		{
+			"id": "MagicLib",
+			"name": "MagicLib",
+		}
+	]
+}
+
