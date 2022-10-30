@@ -3,7 +3,7 @@
     "name": "DevUtils",
     "author": "Lukas04",
     "utility": "true",
-    "version": "1.5.1",
+    "version": "1.5.2",
     "description": "Small Quality of Life mod for mod devs",
     "gameVersion": "0.95.1a-RC6",
 	"jars":["jars/DevUtils.jar"],

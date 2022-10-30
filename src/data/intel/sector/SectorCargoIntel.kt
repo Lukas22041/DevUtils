@@ -33,7 +33,10 @@ class SectorCargoIntel() : BaseIntelPlugin()
 {
 
     var remove = false
-    var idField: TextFieldAPI? = null
+    companion object
+    {
+        var idField: TextFieldAPI? = null
+    }
 
     override fun reportPlayerClickedOn() {
         super.reportPlayerClickedOn()

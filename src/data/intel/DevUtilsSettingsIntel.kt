@@ -26,8 +26,12 @@ class DevUtilsSettingsIntel() : BaseIntelPlugin()
 
     var receivingInput = false
 
-    var amountOfMaxEntries: TextFieldAPI? = null
-    var devModeIntelButton: ButtonAPI? = null
+    companion object
+    {
+        var amountOfMaxEntries: TextFieldAPI? = null
+        var devModeIntelButton: ButtonAPI? = null
+    }
+
 
     //Have to get the IntelUIAPI from a button press because there is no other way to access it for some reason...
     var UIAPI: IntelUIAPI? = null

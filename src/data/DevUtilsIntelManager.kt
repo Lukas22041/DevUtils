@@ -157,6 +157,8 @@ class DevUtilsIntelManager : EveryFrameScript
 
     }
 
+
+
     private fun cleanUpIntel()
     {
         if (systemIntel != null)
@@ -205,6 +207,7 @@ class DevUtilsIntelManager : EveryFrameScript
         sectorMemoryIntel = null
         sectorEntityIntel = null
         cheatIntel = null
+        settingsIntel = null
 
         for (faction in factionsIntel)
         {

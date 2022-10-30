@@ -4,6 +4,10 @@ import com.fs.starfarer.api.util.Misc
 import data.DevHotkeys
 import data.DevUtilsIntelManager
 import data.intel.DevUtilsOverlay
+import data.intel.DevUtilsSettingsIntel
+import data.intel.sector.SectorCargoIntel
+import data.intel.sector.SectorEntitiesIntel
+import data.intel.sector.SectorScriptsIntel
 import org.lazywizard.lazylib.JSONUtils
 import java.awt.Color
 
@@ -42,6 +46,7 @@ class DevUtilsPlugin : BaseModPlugin()
             DevUtilsPlugin.data!!.save()
         }
 
+
         @JvmStatic
         fun loadDataFromJson()
         {
@@ -58,6 +63,14 @@ class DevUtilsPlugin : BaseModPlugin()
         }
     }
 
+  /*  //Hotfix for game crashing due to it attempting to load a Textfield without a Tooltip attached
+    override fun beforeGameSave() {
+        SectorScriptsIntel.idField = null
+        SectorCargoIntel.idField = null
+        SectorEntitiesIntel.idField = null
+        DevUtilsSettingsIntel.amountOfMaxEntries = null
+    }*/
+
     override fun onNewGameAfterEconomyLoad()
     {
         Global.getSector().addScript(DevUtilsIntelManager())
@@ -66,6 +79,13 @@ class DevUtilsPlugin : BaseModPlugin()
 
     override fun onGameLoad(newGame: Boolean)
     {
+        // Fix for the game crashing on load due to some UI elements being loaded without their Tooltip reference existing
+        SectorScriptsIntel.idField = null
+        SectorCargoIntel.idField = null
+        SectorEntitiesIntel.idField = null
+        DevUtilsSettingsIntel.amountOfMaxEntries = null
+        DevUtilsSettingsIntel.devModeIntelButton = null
+
         Global.getSector().memoryWithoutUpdate.set("\$DevUtils_Hud", null)
         loadDataFromJson()
         Global.getSector().addTransientScript(DevHotkeys())

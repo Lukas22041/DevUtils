@@ -22,8 +22,10 @@ class SectorScriptsIntel() : BaseIntelPlugin()
 {
 
     var remove = false
-    var idField: TextFieldAPI? = null
-    var tagsField: TextFieldAPI? = null
+    companion object
+    {
+        var idField: TextFieldAPI? = null
+    }
 
     override fun reportPlayerClickedOn() {
         super.reportPlayerClickedOn()
@@ -76,7 +78,6 @@ class SectorScriptsIntel() : BaseIntelPlugin()
         var tagsFieldText = ""
 
         if (idField != null) idFieldText = idField!!.text
-        if (tagsField != null) tagsFieldText = tagsField!!.text
 
         info.addSectionHeading("Filter by Name", Alignment.MID ,10f)
         idField = info.addTextField(width, 3f)
