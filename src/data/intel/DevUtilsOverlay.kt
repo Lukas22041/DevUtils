@@ -15,7 +15,6 @@ import org.lwjgl.opengl.GL11.*
 
 class DevUtilsOverlay() : EveryFrameScript {
 
-
     private var toDraw: LazyFont.DrawableString? = null
 
     init {
@@ -64,8 +63,7 @@ class DevUtilsOverlay() : EveryFrameScript {
         glEnable(GL_BLEND)
         glTranslatef(0.01f, 0.01f, 0f)
 
-        var textMap = PrintData().DisplayScriptValues(script)
-
+        var textMap: MutableMap<String, String>? = PrintData().DisplayScriptValues(script) ?: return
 
         var color = when (DevUtilsPlugin.OverlayColor)
         {
@@ -78,7 +76,7 @@ class DevUtilsOverlay() : EveryFrameScript {
 
         toDraw!!.baseColor = color
 
-        textMap.forEach {
+        textMap!!.forEach {
             toDraw!!.append(it.key + ": ", color)
             toDraw!!.append(it.value, color)
             toDraw!!.append("\n", color)

@@ -19,6 +19,8 @@ public class PrintData
         MethodHandle nameField = MethodHandles.lookup().findVirtual(methodClass, "getName", MethodType.methodType(String.class));
         MethodHandle access = MethodHandles.lookup().findVirtual(methodClass, "setAccessible", MethodType.methodType(void.class, boolean.class));
 
+        if (script == null) return null;
+
         int size = script.getClass().getDeclaredFields().length;
 
         Map<String, String> map = new HashMap<>();

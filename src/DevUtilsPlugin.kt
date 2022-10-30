@@ -66,11 +66,12 @@ class DevUtilsPlugin : BaseModPlugin()
 
     override fun onGameLoad(newGame: Boolean)
     {
+        Global.getSector().memoryWithoutUpdate.set("\$DevUtils_Hud", null)
+        loadDataFromJson()
         Global.getSector().addTransientScript(DevHotkeys())
     }
 
     override fun onApplicationLoad()
     {
-        loadDataFromJson()
     }
 }
